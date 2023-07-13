@@ -30,9 +30,9 @@ public class Principal {
         Usuario au;
         for (int i = 0; i < lectura.obtenerLista().size(); i++) {
             au = lectura.obtenerLista().get(i);
-             numeroAleatorio = rand.nextInt(900000) + 100000;
+            numeroAleatorio = rand.nextInt(900000) + 100000;
             if (au.getServi().equals("Netflix")) {
-               
+
                 APINetflix net = new APINetflix();
                 net.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 net.establecerApiKey(String.valueOf(numeroAleatorio));
@@ -41,7 +41,7 @@ public class Principal {
                 lista.add(gen);
             }
             if (au.getServi().equals("Disney")) {
-        
+
                 APIDisney dis = new APIDisney();
                 dis.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 dis.establecerApiKey(String.valueOf(numeroAleatorio));
@@ -50,7 +50,7 @@ public class Principal {
                 lista.add(gen);
             }
             if (au.getServi().equals("Amazon")) {
-                
+
                 APIAmazonMovie ama = new APIAmazonMovie();
                 ama.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 ama.establecerApiKey(String.valueOf(numeroAleatorio));
@@ -59,7 +59,7 @@ public class Principal {
                 lista.add(gen);
             }
             if (au.getServi().equals("Startplus")) {
-               
+
                 APIStartplus star = new APIStartplus();
                 star.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 star.establecerApiKey(String.valueOf(numeroAleatorio));

@@ -27,7 +27,7 @@ public class APIDisney implements APIMovie {
     public void establecerApiKey(String ak) {
         Random rand = new Random();
         int numeroAleatorio = rand.nextInt(900000) + 100000;
-        apiKey = ak + "DISNEY" + numeroAleatorio + user;
+        apiKey = ak + "DISNEY" + numeroAleatorio+";" + user;
     }
 
     @Override

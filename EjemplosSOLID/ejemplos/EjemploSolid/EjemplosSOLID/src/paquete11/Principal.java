@@ -30,44 +30,41 @@ public class Principal {
         Usuario au;
         for (int i = 0; i < lectura.obtenerLista().size(); i++) {
             au = lectura.obtenerLista().get(i);
+             numeroAleatorio = rand.nextInt(900000) + 100000;
             if (au.getServi().equals("Netflix")) {
-                numeroAleatorio = rand.nextInt(900000) + 100000;
+               
                 APINetflix net = new APINetflix();
                 net.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 net.establecerApiKey(String.valueOf(numeroAleatorio));
-                APIMovie apiMovi = net;
                 GeneradorPelicula gen = new GeneradorPelicula();
-                gen.establecerLlave(apiMovi);
+                gen.establecerLlave(net);
                 lista.add(gen);
             }
             if (au.getServi().equals("Disney")) {
-                numeroAleatorio = rand.nextInt(900000) + 100000;
+        
                 APIDisney dis = new APIDisney();
                 dis.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 dis.establecerApiKey(String.valueOf(numeroAleatorio));
-                APIMovie apiMovi = dis;
                 GeneradorPelicula gen = new GeneradorPelicula();
-                gen.establecerLlave(apiMovi);
+                gen.establecerLlave(dis);
                 lista.add(gen);
             }
             if (au.getServi().equals("Amazon")) {
-                numeroAleatorio = rand.nextInt(900000) + 100000;
+                
                 APIAmazonMovie ama = new APIAmazonMovie();
                 ama.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 ama.establecerApiKey(String.valueOf(numeroAleatorio));
-                APIMovie apiMovi = ama;
                 GeneradorPelicula gen = new GeneradorPelicula();
-                gen.establecerLlave(apiMovi);
+                gen.establecerLlave(ama);
                 lista.add(gen);
             }
             if (au.getServi().equals("Startplus")) {
-                numeroAleatorio = rand.nextInt(900000) + 100000;
+               
                 APIStartplus star = new APIStartplus();
                 star.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 star.establecerApiKey(String.valueOf(numeroAleatorio));
-                APIMovie apiMovi = star;
                 GeneradorPelicula gen = new GeneradorPelicula();
-                gen.establecerLlave(apiMovi);
+                gen.establecerLlave(star);
                 lista.add(gen);
             }
         }

@@ -22,21 +22,20 @@ public class Principal {
          */
         Random rand = new Random();
         int numeroAleatorio;
-        
-        
+
         String nombreArchivo = "usuarios.txt";
         ArchivoLectura lectura = new ArchivoLectura(nombreArchivo);
         lectura.establecerLista();
         ArrayList<GeneradorPelicula> lista = new ArrayList<>();
         Aux au;
         for (int i = 0; i < lectura.obtenerLista().size(); i++) {
-            au=lectura.obtenerLista().get(i);
+            au = lectura.obtenerLista().get(i);
             if (au.getServi().equals("Netflix")) {
                 numeroAleatorio = rand.nextInt(900000) + 100000;
                 APINetflix net = new APINetflix();
                 net.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 net.establecerApiKey(String.valueOf(numeroAleatorio));
-               APIMovie apiMovi=net;
+                APIMovie apiMovi = net;
                 GeneradorPelicula gen = new GeneradorPelicula();
                 gen.establecerLlave(apiMovi);
                 lista.add(gen);
@@ -46,7 +45,7 @@ public class Principal {
                 APIDisney dis = new APIDisney();
                 dis.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 dis.establecerApiKey(String.valueOf(numeroAleatorio));
-                APIMovie apiMovi= dis;
+                APIMovie apiMovi = dis;
                 GeneradorPelicula gen = new GeneradorPelicula();
                 gen.establecerLlave(apiMovi);
                 lista.add(gen);
@@ -56,7 +55,7 @@ public class Principal {
                 APIAmazonMovie ama = new APIAmazonMovie();
                 ama.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 ama.establecerApiKey(String.valueOf(numeroAleatorio));
-                APIMovie apiMovi= ama;
+                APIMovie apiMovi = ama;
                 GeneradorPelicula gen = new GeneradorPelicula();
                 gen.establecerLlave(apiMovi);
                 lista.add(gen);
@@ -66,7 +65,7 @@ public class Principal {
                 APIStartplus star = new APIStartplus();
                 star.establecerUser(lectura.obtenerLista().get(i).getUsu());
                 star.establecerApiKey(String.valueOf(numeroAleatorio));
-                APIMovie apiMovi= star;
+                APIMovie apiMovi = star;
                 GeneradorPelicula gen = new GeneradorPelicula();
                 gen.establecerLlave(apiMovi);
                 lista.add(gen);

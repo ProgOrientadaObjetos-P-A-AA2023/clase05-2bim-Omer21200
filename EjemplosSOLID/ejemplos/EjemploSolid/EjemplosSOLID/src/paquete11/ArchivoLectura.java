@@ -17,7 +17,7 @@ public class ArchivoLectura {
     private Scanner entrada;
     private String nombreArchivo;
     private String rutaArchivo;
-    private ArrayList<Aux> lista;
+    private ArrayList<Usuario> lista;
 
     public ArchivoLectura(String n) {
         nombreArchivo = n;
@@ -69,7 +69,7 @@ public class ArchivoLectura {
                 ArrayList<String> linea_partes = new ArrayList<>(
                         Arrays.asList(linea.split(";"))
                 );
-                Aux p = new Aux(linea_partes.get(1),
+                Usuario p = new Usuario(linea_partes.get(1),
                         linea_partes.get(2));
                 lista.add(p);
 
@@ -77,7 +77,7 @@ public class ArchivoLectura {
         }
     }
 
-    public ArrayList<Aux> obtenerLista() {
+    public ArrayList<Usuario> obtenerLista() {
 
         return lista;
     }

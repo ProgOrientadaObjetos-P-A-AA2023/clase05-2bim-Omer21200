@@ -27,7 +27,7 @@ public class Principal {
         ArchivoLectura lectura = new ArchivoLectura(nombreArchivo);
         lectura.establecerLista();
         ArrayList<GeneradorPelicula> lista = new ArrayList<>();
-        Aux au;
+        Usuario au;
         for (int i = 0; i < lectura.obtenerLista().size(); i++) {
             au = lectura.obtenerLista().get(i);
             if (au.getServi().equals("Netflix")) {
